@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  html,
+  body {
+    width: 100%;
+    font-family: 'MicrosoftYaHei', 'Microsoft YaHei', 'Arial', '黑体', '宋体',
+      '微软雅黑', sans-serif;
+    overflow: hidden;
+  }
+  a {
+    color: #000;
+    text-decoration: none;
+    outline: none;
+  }
+  input {
+    outline: none;
+  }
+  img {
+    border: 0;
+  }
+  ul,
+  li {
+    list-style: none;
+  }
+  ::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /*定义滑块，内阴影及圆角*/
+  ::-webkit-scrollbar-thumb {
+    height: 80px !important;
+    border-radius: 2px;
+    width: 6px;
+    height: 6px;
+    border: 7px solid transparent;
+    background-color: #e8e7e3;
+    background-clip: content-box;
+  }
+  
+  /* hover到可滚动区域加深滚动条 */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #d9d8d4;
+  }
+  .toast {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    z-index: 1001;
+    transform: translateY(-50%);
+  }
+  
+  .toast span {
+    display: inline-block;
+    padding: 20px;
+    line-height: 42px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background: rgba(46, 46, 46, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.43);
+    font-size: 14px;
+    color: #fff;
+    max-width: 90%;
+  }
+  
+  /*错误提示-可能网络不好的情况，图片内置*/
+  
+  .toast i {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    margin-right: 20px;
+    vertical-align: top;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAACoCAMAAABJ5TmRAAAAq1BMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Nr6iZAAAAOHRSTlMA/AT58xTdgufjzzr26iN7C9m27lEzxFYP04txTAjKQqyShmpcYy0Z1aidjrqxfyggo0kwdr6WHX7WGOIAAAVASURBVGje7Ne5DYAwEERRZywNkNKDo+m/MmRBRsCuPBxr5icESA/J+JBL3hZ4C6BwN0VQ98cnPtpUPro2lY2WptLRXSWju0pGD5WL+lXgahGc37+GBhM6HgpH30DzjKlQzdMMYyr0n2g8x0Ui3FLyB0JPoaUzoTy0mlU6aoDlQKvNNcePGgTNskup+wKA6FOoUKFChQrtRHXeb+2a6XKiQBRGuwFREFTEXcO470tMNHPe/8mmEMUNFDQ/5/xIpVKV46X7u7ebKo98it+n6hZ/3Zl3p5PfdzYzv+7UfslZXVw4zUfOz7mhuuZ8mOBzh3SSOQu2tu33yjZyWVeeSBXHEwf+WA+doqsFaRu3dIzi5GmpSZzCnosTnbJUe4+1U9MvWPca4iH0Ltdiq1qtR0XUqQghNk+cwthfb9tMasUPEUu/IBLQ1cQ1myVOR7zHiD/ihopOufCWtCG9++hkNbWoxLaAN3/a8w4bccekjFmNLqInQWs/iXQfMzKStuzfbFjW/zEw8HEqjycDVCJL6jK9KnbNsZ3mGsB+/Kj3NFwlOpS5y5VdgzhSGi4lyJ+srurZ6PzNYCsiyZSp/RUBReBy0XdNAmql6C6BuGC2NbcSOhFXzAlYiwg+XLDiGm/cVFuK77yX6gToIooeYMYueU/vl3b4lMUVkgA1eqRKYCHi+Gpn8XH9yG9amWSVihXAMNZa5EBd+FJGYWwff+WlCiCrcZvFgdmxAVdhsGrh7seXqmUeOd3jdaRlhcH8OOU0mo0EyEX1wOAUx+k4iMM68cncw2ca7/zJ57S0UzaTw8eLc+olUWjKdkprnQP7aKfM+xuzpJXSuuI+4CMCTrItW+WVBWAZ4WyednhBuZTK+kdyoCZu061+ixM7Wcuksq4JMMNHrGj4FC9XRDXTWcsE6GGexzpQU6521EpnbTQJsCfhn8pohZsD3Gqmsv41CLDCOaC0BkK8Zx27BMi6OPOutXqy0n9kVb1Suqs8R5YPcj6U+1RdUOFEriBiabNN4VQ8QuRIxLIgm3KwhHTjH7JLJeVcCTFil+DD1DZJpTmukbvYULtOI6FU5RZzEjuBZgmlBneog9iju55M2iWC6SY6KTU7kzCmUch55EFcUBMuwJQzOckJrR49gr+TOD90QuzCuEZIM+L/S7lyEmkfxyTA9DNaNwjZf963a5JSv1WZF/WVjcpCCXajbRPSvd2YhvXzvPObzE8n6fkitjtr5e1bW3n6VNqGXPVYgnqu6mPoEeLlrwaL+sz5qeFxvDLNuMp8fmtxIrc+B2zuPj9OZ8qC4MrUoXaz0/Vu6JVmuxQkVes+cQ5xM0IMJD1FCMWmcJegysKUHHG92c9KDSZ5PBmb4aFGjVVJVHKsI8/xP4Pe0slZIJH201ffLctjrgwMHXDE23xhFY7F9FWwdw75d50lnWAeT1oaWGhfRX7elbaCi9lmroIxKP0gi9jKe86q9F958isJ+sh3tSUGnbeciklLdGqAM1TO98juW9Id+mgKNOsXxdvIxhvOgoUNmJXr89Jm9IZ0D+DdrWCH/evOEYDevh2W477k81VnxsXp2qDOvi7Gdd8BKL4qnVEWQqmXJRjZQ2nVg9FYjJi+6OygfQYbU9RBLostHdBbfpM6VF/rT4P2+SrjlwtG6+ha03tJ2sNTTuP9UKMKeINGkLXXWjUv1XHwy8IAnP63qPZcsLaHGVV7pVWVJv2zMft9OumWgF6ciAGz9NIiTinfM4BpdnzVZFkDZHmoWqlbdaPSzQHN9fj+Ib66Kqhpokp6nkv/f+fmF/kHT18wsqKyqXIAAAAASUVORK5CYII=)
+      no-repeat left top;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+  }
+  
+  .toast i.delete {
+  }
+  
+  .toast i.network {
+    background-position: 0 -42px;
+  }
+  .clearfix:before,
+  .clearfix:after {
+    content: ' ';
+    display: table;
+  }
+  .clearfix:after {
+    clear: both;
+    overflow: hidden;
+  }
+  .clearfix {
+    zoom: 1;
+  }
+  .fr {
+    float: right;
+  }
+  .fl {
+    float: left;
+  }
+  
+  html,body,#app,.layout-container,.left-slider {
+      height: 100%;
+  }
