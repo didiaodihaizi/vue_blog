@@ -14,6 +14,12 @@ import './article/data.js'
 Vue.use(VueQuillEditor)
 Vue.config.productionTip = false;
 
+router.beforeEach((to, from, next) => {
+  if (to.path === '/') {
+    next('/home')
+  }
+  next()
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

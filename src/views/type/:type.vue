@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <ul class="article-list">
-            <li class="article-item" v-for="item in listShow" :key="`${item.type}${item.id}`" @click="toDetail(item)">
+            <li class="article-item" v-for="item in articleList" :key="`${item.type}${item.id}`" @click="toDetail(item)">
                 <div class="article-inner">
                     <h1 class="article-title">{{ item.title }}</h1>
                     <p class="desc">{{ item.desc }}</p>
@@ -17,16 +17,32 @@ import articleList from '@/article/data'
 export default {
     data () {
         return {
-            articleList
+            articleList: []
         }
     },
     computed: {
-        listShow () {
-            const { type } = this.$route.params
-            return this.articleList.filter(item => item.type === type)
+    },
+    watch: {
+        '$route.path' () {
+            this.init()
         }
     },
+    mounted () {
+        this.init()
+    },
     methods: {
+        init () {
+            this.articleList = []
+            const { type } = this.$route.params
+            let arr = articleList.filter(item => item.type === type)
+            articleList.forEach(async item => {
+                if (item.type === type) {
+                    const res = await item
+                    res.default.type = item.type
+                    this.articleList.push(res.default)
+                }
+            })
+        },
         toDetail (item) {
             this.$router.push(`/article/${item.type}/${item.id}`)
         }

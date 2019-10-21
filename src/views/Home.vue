@@ -14,11 +14,21 @@
 
 <script>
 import articleList from '@/article/data'
+import articleMixins from '@/mixins/articleMixins'
 export default {
+    mixins: [articleMixins],
     data () {
         return {
-            articleList
+            articleList: []
         }
+    },
+    mounted () {
+        console.log(articleList)
+        articleList.forEach(async item => {
+            const res = await item
+            res.default.type = item.type
+            this.articleList.push(res.default)
+        })
     },
     methods: {
         toDetail (item) {

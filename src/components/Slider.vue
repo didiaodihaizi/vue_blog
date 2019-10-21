@@ -4,7 +4,8 @@
         <div class="slider-container">
             <img class="avator" src="~@/assets/images/avator.jpg" alt="">
             <p class="name">低调di孩子</p>
-            <p class="desc">性别男，爱好吃，善长写bug</p>
+            <p class="intro-item desc">性别男，爱好吃，善长写bug</p>
+            <p class="intro-item qq">qq: 709497553</p>
             <ul class="theme-list">
                 <li class="theme-item" v-for="item in themeList" :key="item.id">
                     <a @click="filterArticle(item.type)">{{ item.name }}</a>
@@ -81,5 +82,11 @@ export default {
 .theme-list {
     line-height: 30px;
     margin-top: 20px;
+}
+.theme-item {
+    cursor: pointer;
+}
+.intro-item  {
+    margin-bottom: 5px;
 }
 </style>

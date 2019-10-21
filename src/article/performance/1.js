@@ -1,4 +1,4 @@
-{
+export default {
     "id": 1,
     "title": "性能优化-无题",
     "desc": "简单阐述为什么、怎么做",

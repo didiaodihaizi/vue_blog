@@ -18,9 +18,10 @@ export default {
     },
     mounted () {
         const { id, type } = this.$route.params
-        this.allArticle.forEach(item => {
-            if (item.type === type && item.id == id) {
-                this.article = item
+        this.allArticle.forEach(async item => {
+            const res = await item
+            if (item.type === type && res.default.id == id) {
+                this.article = res.default
             }
         })
     }
