@@ -50,7 +50,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../docs'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/vue_blog/',
+    assetsPublicPath: '/my-blog/',
 
     /**
      * Source Maps
