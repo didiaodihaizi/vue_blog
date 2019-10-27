@@ -3,7 +3,6 @@ const keys = requireArticle.keys()
 let list = []
 ;(async () => {
     for (let i = 0; i < keys.length; i++) {
-        console.log(keys[i])
         if (keys[i].indexOf('data') !== -1) {
             continue
         }

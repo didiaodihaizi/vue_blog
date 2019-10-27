@@ -23,7 +23,6 @@ export default {
         }
     },
     mounted () {
-        console.log(articleList)
         articleList.forEach(async item => {
             const res = await item
             res.default.type = item.type
