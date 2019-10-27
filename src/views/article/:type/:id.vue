@@ -1,7 +1,7 @@
 <template>
     <div class="article ql-editor">
         <div class="content">
-            <div v-html="article.content"></div>
+            <div class="ql-container " v-html="article.content"></div>
         </div>
         
     </div>
@@ -31,10 +31,19 @@ export default {
 <style lang="less">
 .article {
     background: rgb(63, 63, 63);
+    a {
+        color: blue;
+    }
     .content {
         box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
         padding: 30px;
         color: #fff;
+    }
+    .ql-syntax {
+        background-color: #c4e2d8;
+        color: #333;
+        overflow: visible;
+        border-radius: 4px;
     }
 }
 </style>

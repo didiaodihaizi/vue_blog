@@ -4,7 +4,8 @@
         <div class="slider-container">
             <img class="avator" src="~@/assets/images/avator.jpg" alt="">
             <p class="name">低调di孩子</p>
-            <p class="intro-item desc">性别男，爱好吃，善长写bug</p>
+            <p class="intro-item desc">性别男，爱好吃</p>
+            <p class="intro-item desc">我也知道界面丑，但我不会设计啊</p>
             <p class="intro-item qq">qq: 709497553</p>
             <ul class="theme-list">
                 <li class="theme-item" v-for="item in themeList" :key="item.id">
