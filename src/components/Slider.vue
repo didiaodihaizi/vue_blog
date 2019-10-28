@@ -22,7 +22,7 @@ export default {
         return {
             themeList: [
                 { id: 1, name: '性能优化', type: 'performance' },
-                { id: 2, name: 'webpack', type: 'webpack' }
+                { id: 2, name: '工具', type: 'tools' }
             ]
         }
     },
