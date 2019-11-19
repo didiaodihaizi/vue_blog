@@ -22,7 +22,8 @@ export default {
         return {
             themeList: [
                 { id: 1, name: '性能优化', type: 'performance' },
-                { id: 2, name: '工具', type: 'tools' }
+                { id: 2, name: '工具', type: 'tools' },
+                { id: 3, name: '工作小感悟', type: 'work'}
             ]
         }
     },
