@@ -32,7 +32,7 @@ export default {
 .article {
     background: rgb(63, 63, 63);
     a {
-        color: blue;
+        color: #0081ff;
     }
     .content {
         box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
@@ -40,10 +40,14 @@ export default {
         color: #fff;
     }
     .ql-syntax {
-        background-color: #c4e2d8;
-        color: #333;
+        background-color: #666666;
+        color: #f1f1f1;
         overflow: visible;
         border-radius: 4px;
+        margin: 10px;
+    }
+    strong {
+        color: #e54d42;
     }
 }
 </style>

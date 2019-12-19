@@ -5,7 +5,7 @@
                 <div class="article-inner">
                     <h1 class="article-title">{{ item.title }}</h1>
                     <p class="desc">{{ item.desc }}</p>
-                    <p class="create-time">{{ item.create_time }}</p>
+                    <!-- <p class="create-time">{{ item.create_time }}</p> -->
                 </div>
             </li>
         </ul>
